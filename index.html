@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GymTracker</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#dc2626">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<style>
+  :root{--ac:#dc2626;--ac2:#991b1b}
+  [data-tema=azul]{--ac:#2563eb;--ac2:#1e40af}
+  [data-tema=rosa]{--ac:#ec4899;--ac2:#9d174d}
+  body{background:#0a0a0c;color:#f4f4f5}
+  .btn{background:var(--ac);border-radius:.5rem;padding:.6rem 1rem;font-weight:600}
+  .btn:hover{background:var(--ac2)}
+  .inp{background:#18181b;border:1px solid #3f3f46;border-radius:.5rem;padding:.6rem .8rem;width:100%}
+  .inp:focus{outline:2px solid var(--ac)}
+  .card{background:#141418;border:1px solid #27272a;border-radius:.75rem}
+</style>
+</head>
+<body class="min-h-screen">
+<header id="top" class="hidden items-center justify-between p-4 border-b border-zinc-800">
+  <span class="font-bold text-xl" style="color:var(--ac)">GymTracker</span>
+  <div class="flex items-center gap-3 relative">
+    <select id="tema" class="inp !w-auto !py-1" aria-label="Tema">
+      <option value="rojo">Rojo</option><option value="azul">Azul</option><option value="rosa">Rosa</option>
+    </select>
+    <button id="soporteBtn" class="text-2xl" aria-label="Soporte">🛟</button>
+    <div id="soporteMenu" class="hidden absolute right-0 top-10 card p-2 w-56 z-20">
+      <button data-s="reset_pin" class="block w-full text-left p-2 hover:bg-zinc-800 rounded">Restablecer PIN</button>
+      <button data-s="eliminar_perfil" class="block w-full text-left p-2 hover:bg-zinc-800 rounded">Eliminar perfil</button>
+    </div>
+    <button id="ajustes" class="text-xl" aria-label="Ajustes">⚙️</button>
+    <button id="salir" class="text-sm text-zinc-400">Salir</button>
+  </div>
+</header>
+<main id="app" class="max-w-3xl mx-auto p-4"></main>
+<div id="modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-30">
+  <div id="modalBox" class="card p-5 w-full max-w-sm"></div>
+</div>
+<script src="config.js"></script>
+<script src="app.js"></script>
+<script src="calendario.js"></script>
+<script src="entreno.js"></script>
+<script src="dashboard.js"></script>
+<script src="admin.js"></script>
+<script src="extras.js"></script>
+</body>
+</html>
